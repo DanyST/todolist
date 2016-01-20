@@ -1,0 +1,39 @@
+<br/>
+<div class="row">
+<div class="col-md-12">
+
+
+<div class="panel panel-primary">
+<!-- Default panel contents -->
+<div class="panel-heading block text-center"><h3>To Do List Intranet Iosento</h3></div>
+
+
+<!-- Table -->
+<table class="table">
+    <tr>
+        <th>Nombre</th>
+        <th>Estado</th>
+        
+        <th></th>
+    </tr>
+    <tr ng-hide="sectors.length" >
+        <td colspan="5">Lista no encontrada, porfavor crear una.</td>
+    </tr>
+    <tr ng-show="sectors.length" ng-repeat="sector in sectors">
+        <td class"">{{sector.name}}</td>
+         <td>{{sector.status}}</td>
+       
+        <td>
+             <a class="btn btn-success" href="#/sectors/{{sector.id}}/edit">Editar</a>
+
+            | 
+            <a class="btn btn-warning"  ng-click="deleteSector(sector.id)" href="">Borrar</a>
+        </td>
+       
+
+    </tr>
+</table>
+</div>
+
+</div>
+</div>

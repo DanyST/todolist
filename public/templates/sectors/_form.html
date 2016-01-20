@@ -1,0 +1,28 @@
+<div class="form-group" ng-class="{'has-error' : submitted && sectorForm.name.$invalid}">
+    <label class="control-label col-md-3">Nombre Lista <span class="required"> </span> </label>
+    <div class="col-md-4">
+        <input type="text" autofocus name="name" class="form-control" ng-model="sector.name" required placeholder="Escribe un nombre"/>
+    </div>
+    <p ng-show=" submitted && sectorForm.name.$invalid" class="help-block">Se requiere un nombre</p>
+</div>
+
+<div class="form-group" ng-class="{'has-error' : submitted && sectorForm.status.$invalid}">
+    <label class="control-label col-md-3">Estado <span class="required"></span> </label>
+    <div class="col-md-4">
+      <!-- <input type="text" name="status" class="form-control" ng-model="sector.status" required placeholder="Elige un estado"/> -->
+<select name="status" class="form-control" ng-model="sector.status">       
+                <option selected="selected" value="EN PROCESO">En proceso</option>  
+                <option value="LISTO">Listo</option>        
+        </select>
+    </div>
+    <p ng-show=" submitted && sectorForm.status.$invalid" class="help-block">Se requiere un estado</p>
+</div>
+
+<div class="form-group text-center">
+    
+        
+        <a class="btn btn-default" href="/"> Atras</a>
+        <button type="submit" class="btn btn-primary" ng-click="submitted=true">Submit</button>
+    
+</div>
+

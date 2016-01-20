@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myapplication">
+<head >
+	
+    
+  <title>To Do List Intranet Iosento</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+<div class="container">
+
+<ul class="nav nav-pills centered">
+  <li class="active"><%= link_to "Inicio", root_path %></li>
+  <% if user_signed_in? %>
+  <li><a href="#/sectors/new">Crear una Nueva Lista</a></li>
+  <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %></li>
+  <%else%>
+<li><%= link_to "Iniciar Sesión", new_user_session_path %></li>
+ <% end %>
+
+
+</ul>
+
+</div>
+
+<p class="notice"><%= notice %></p>	<p class="alert"><%= alert %></p>
+	
+
+<div class="container"  ng-view>
+	<%= yield %>
+</div>
+
+</body>
+</html>
